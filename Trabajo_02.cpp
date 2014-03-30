@@ -1,24 +1,45 @@
-#include <cstdlib>
+//#include <cstdlib>
 #include <iostream>
+#include <fstream>
+//#include <cstring>
 
 using namespace std;
 
+void integrantes(){
+     cout<<"\n\n - Integramtes :\nVICTORIA MUÑOZ.\nDANIEL LEIVA.\nFABIAN CORDOVEZ\n\n";
+}
+
 int main(int argc, char *argv[])
 {
+    int valida_case;
+    char *captura_arg;
+    char *escrito;
+    //ifstream fe(captura_arg);
+    
+    captura_arg=argv[3];
+    
+    //strcpy(escrito,fe);
+    //fe >> escrito;
+    //fe.close();
+    //cout<<"asd"<<escrito<<endl;
     
     if(argc!=1){
-      aux2=argv[3];
     
-      if((argv[1][0]!='-')/*||(sizeof(*aux2!=10))*/){
+      if((argv[1][0]!='-')){
           return EXIT_SUCCESS;
       };
     
       switch (argv[1][1]){
              
-         case 's':     
+         case 's':     cout<<"ok"<<endl;
+                       system("PAUSE");
+                       //strcpy(captura_arg,argv[3]);
+                       //captura_arg = new char(argv[3]);
+                       
+                       cout<<"ok"<<captura_arg<<endl;
                        break;
                        
-         case 'a':     
+         case 'a':     cout<<"asd";
                        break;
               
          case 'v':     integrantes();
@@ -27,20 +48,20 @@ int main(int argc, char *argv[])
     }else{    
           cout<<"\nSeleccione alternativa :\n 1.- Consultar datos de fecha especifica (YYYY-MM-DD).";
           cout<<"\n 2.- Consultar Integrantes.\n\nIngrese opcion y 'ENTER' : ";
-          cin>>aux[0];
+          cin>>valida_case;
       
-          switch(aux[0]){
+          switch(valida_case){
                case 1:     cout<<"\n\n****************************************************************";
-                           
-                             break;
+                           break;
                             
                case 2:     integrantes();
-                             break;
+                           break;
               
-               default :     cout<<"\nError al ingresar opcion en menu, Adios.\n\n";  
-                            break;                     
-               };
+               default :   cout<<"\nError al ingresar opcion en menu, Adios.\n\n";  
+                           break;                     
+          };
     };
+    //fe.close();
     system("PAUSE");
     return EXIT_SUCCESS;
 }
